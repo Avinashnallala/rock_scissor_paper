@@ -3,7 +3,11 @@ def rock():
     s=['rock','paper','scissor']
     d=rd.choice(s)
     k = input('Enter the rock or paper or scissor').lower()
-    if d=='rock' and k =='scissor':
+    if k not in ['rock','paper','scissor']:
+        print('try again')
+    elif k==d:
+        print('game is tied try again')
+    elif d=='rock' and k =='scissor':
         print('computer wins')
     elif d=='rock' and k=='paper':
         print('you win')
@@ -15,8 +19,6 @@ def rock():
         print('computer wins')
     elif d=='paper' and k=='scissor':
         print('you wins')
-    else:
-        print('ohhh try again')
 def main():
     while True:
         f=input('enter you want to play:Y or exit N').upper()
